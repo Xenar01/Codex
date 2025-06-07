@@ -36,8 +36,6 @@ def main():
     window.btnDiscover.clicked.connect(refresh_sites)
     window.btnRefreshSites.clicked.connect(refresh_sites)
 
-    window.btnOpenScraper.clicked.connect(scrape_all)
-
     def scrape_all():
         scraper_win = uic.loadUi("gui/scraper.ui")
 
@@ -95,6 +93,7 @@ def main():
         scraper_win.show()
 
 
+    window.btnOpenScraper.clicked.connect(scrape_all)
     window.show()
     sys.exit(app.exec_())
 
