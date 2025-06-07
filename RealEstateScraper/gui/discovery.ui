@@ -1,0 +1,77 @@
+<!-- Qt Designer XML: شاشة اكتشاف المواقع -->
+<ui version="4.0">
+  <class>DiscoveryWindow</class>
+  <widget class="QMainWindow" name="DiscoveryWindow">
+    <property name="windowTitle">
+      <string>اكتشاف مواقع العقارات</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+          <widget class="QGroupBox" name="groupBoxMethod">
+            <property name="title"><string>طريقة الاكتشاف</string></property>
+            <layout class="QVBoxLayout" name="verticalLayoutMethods">
+              <item>
+                <widget class="QRadioButton" name="radioGoogle">
+                  <property name="text"><string>Scrape Google Search</string></property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QRadioButton" name="radioBing">
+                  <property name="text"><string>Bing Search API</string></property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QRadioButton" name="radioCustom">
+                  <property name="text"><string>Custom Keyword Crawler</string></property>
+                </widget>
+              </item>
+            </layout>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLineEdit" name="editBingKey">
+            <property name="placeholderText"><string>مفتاح Bing API</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QTextEdit" name="editKeywords">
+            <property name="placeholderText"><string>الكلمات المفتاحية، مفصولة بفواصل</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnDiscover">
+            <property name="text"><string>بحث تلقائي</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QTableWidget" name="tableResults">
+            <column><property name="text"><string>#</string></property></column>
+            <column><property name="text"><string>اسم الموقع</string></property></column>
+            <column><property name="text"><string>الرابط</string></property></column>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnRefreshSites">
+            <property name="text"><string>تحديث المواقع</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnOpenScraper">
+            <property name="text"><string>بدء التجريف</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnManageCreds">
+            <property name="text"><string>إدارة بيانات الدخول</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnScheduler">
+            <property name="text"><string>المجدول</string></property>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+</ui>
