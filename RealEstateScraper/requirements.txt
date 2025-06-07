@@ -1,0 +1,10 @@
+PyQt5
+pyyaml
+requests
+beautifulsoup4
+selenium
+webdriver-manager
+apscheduler
+sqlalchemy
+python-dotenv
+fuzzywuzzy

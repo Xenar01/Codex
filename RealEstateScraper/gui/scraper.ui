@@ -1,0 +1,31 @@
+<!-- Qt Designer XML: واجهة التجريف -->
+<ui version="4.0">
+  <class>ScraperWindow</class>
+  <widget class="QMainWindow" name="ScraperWindow">
+    <property name="windowTitle">
+      <string>تجريف المواقع</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+          <widget class="QTextEdit" name="editFields">
+            <property name="placeholderText"><string>اختر الحقول المطلوبة</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLineEdit" name="editSavePath">
+            <property name="placeholderText"><string>مسار حفظ البيانات</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QProgressBar" name="progressBar"/>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnStartScrape">
+            <property name="text"><string>ابدأ التجريف</string></property>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+</ui>
