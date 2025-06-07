@@ -1,6 +1,7 @@
 import sys
 import yaml
 from PyQt5 import QtWidgets, uic
+from PyQt5.QtCore import Qt
 
 from site_discovery.core import discover_sites
 from utils import db, export, dedup, auth
@@ -36,6 +37,61 @@ def main():
     window.btnDiscover.clicked.connect(refresh_sites)
     window.btnRefreshSites.clicked.connect(refresh_sites)
 
+    def manage_creds():
+        row = window.tableResults.currentRow()
+        if row < 0:
+            return
+        site_name = window.tableResults.item(row, 1).text()
+        dlg = uic.loadUi("gui/login.ui")
+
+        def save():
+            user = dlg.editUsername.text()
+            pwd = dlg.editPassword.text()
+            master, ok = QtWidgets.QInputDialog.getText(dlg, "Master", "كلمة المرور الرئيسية", QtWidgets.QLineEdit.Password)
+            if not ok:
+                return
+            auth.save_credentials(site_name, user, pwd, master)
+            dlg.accept()
+
+        dlg.btnSave.clicked.connect(save)
+        dlg.btnCancel.clicked.connect(dlg.reject)
+        dlg.exec_()
+
+    window.btnManageCreds.clicked.connect(manage_creds)
+
+    def open_scheduler():
+        sched_win = uic.loadUi("gui/scheduler.ui")
+
+        def refresh_jobs():
+            jobs = scheduler.list_jobs()
+            sched_win.tableJobs.setRowCount(len(jobs))
+            for i, job in enumerate(jobs):
+                sched_win.tableJobs.setItem(i, 0, QtWidgets.QTableWidgetItem(job.id))
+                sched_win.tableJobs.setItem(i, 1, QtWidgets.QTableWidgetItem(str(job.trigger)))
+
+        def add_job():
+            cron = sched_win.editCron.text() or config["scheduling"]["default_cron"]
+            scheduler.add_job(scrape_all, cron, job_id=f"job_{len(scheduler.list_jobs())+1}")
+            refresh_jobs()
+
+        def remove_job():
+            row = sched_win.tableJobs.currentRow()
+            if row < 0:
+                return
+            job_id = sched_win.tableJobs.item(row, 0).text()
+            scheduler.remove_job(job_id)
+            refresh_jobs()
+
+        sched_win.btnAdd.clicked.connect(add_job)
+        sched_win.btnRemove.clicked.connect(remove_job)
+        sched_win.btnStart.clicked.connect(scheduler.start)
+        sched_win.btnStop.clicked.connect(scheduler.stop)
+
+        refresh_jobs()
+        sched_win.show()
+
+    window.btnScheduler.clicked.connect(open_scheduler)
+
     def scrape_all():
         scraper_win = uic.loadUi("gui/scraper.ui")
 
@@ -68,7 +124,8 @@ def main():
                     selected_sites.append(window.tableResults.item(i, 1).text())
 
             results_count = 0
-            for site_name in selected_sites:
+            total = len(selected_sites)
+            for idx, site_name in enumerate(selected_sites, 1):
                 try:
                     module = __import__(f"site_scrapers.plugins.{site_name}", fromlist=["scrape"])
                 except ImportError:
@@ -82,6 +139,7 @@ def main():
                 export.export_csv(listings, f"{site_name}.csv")
                 export.export_json(listings, f"{site_name}.json")
                 results_count += len(listings)
+                scraper_win.progressBar.setValue(int(idx / total * 100))
 
             if sys.platform.startswith("win") and config.get("notifications", {}).get("toast"):
                 from win10toast import ToastNotifier

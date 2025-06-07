@@ -61,6 +61,16 @@
             <property name="text"><string>بدء التجريف</string></property>
           </widget>
         </item>
+        <item>
+          <widget class="QPushButton" name="btnManageCreds">
+            <property name="text"><string>إدارة بيانات الدخول</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnScheduler">
+            <property name="text"><string>المجدول</string></property>
+          </widget>
+        </item>
       </layout>
     </widget>
   </widget>

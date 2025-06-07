@@ -1,14 +1,23 @@
 import os
 import json
 import base64
+import hashlib
 from typing import Optional
 from cryptography.fernet import Fernet
 
-CRED_FILE = os.path.join(os.path.dirname(__file__), '..', 'credentials.enc')
+BASE_DIR = os.path.dirname(__file__)
+CRED_FILE = os.path.join(BASE_DIR, '..', 'credentials.enc')
+SALT_FILE = os.path.join(BASE_DIR, '..', 'credentials.salt')
 
 
 def _fernet(master_password: str) -> Fernet:
-    key = base64.urlsafe_b64encode(master_password.encode('utf-8').ljust(32, b'0'))
+    if not os.path.exists(SALT_FILE):
+        with open(SALT_FILE, 'wb') as f:
+            f.write(os.urandom(16))
+    with open(SALT_FILE, 'rb') as f:
+        salt = f.read()
+    dk = hashlib.pbkdf2_hmac('sha256', master_password.encode('utf-8'), salt, 100000, dklen=32)
+    key = base64.urlsafe_b64encode(dk)
     return Fernet(key)
 
 

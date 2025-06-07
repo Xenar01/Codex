@@ -16,6 +16,9 @@ def scrape(fields=None, save_path="images", credentials=None, proxy=None):
     if proxy:
         session.proxies.update({"http": proxy, "https": proxy})
 
+    if credentials:
+        session.post(f"{BASE_URL}/login", data={"username": credentials['username'], "password": credentials['password']})
+
     listings = []
     resp = session.get(BASE_URL)
     soup = BeautifulSoup(resp.text, "html.parser")
