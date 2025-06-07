@@ -1,3 +1,4 @@
+
 import os
 import yaml
 import requests
@@ -31,4 +32,5 @@ def search_bing(keywords: list) -> list:
             for item in data.get("webPages", {}).get("value", []):
                 results.append({"name": item.get("name"), "url": item.get("url")})
     return results
+
 

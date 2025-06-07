@@ -26,6 +26,7 @@ notifications:
 authentication:
   use_master_password: true
   # سيُطلب master password لحفظ بيانات الاعتماد مشفرة
+
 network:
   proxy: ""
   vpn_config: ""
@@ -38,3 +39,4 @@ sites:
     url: "https://sy.opensooq.com"
   - name: "yabaiti"
     url: "https://yabaiti.com"
+

@@ -1,3 +1,4 @@
+
 """SQLAlchemy models and helpers for storing scraped data."""
 
 import os
@@ -79,3 +80,4 @@ def save_listing(session, site_name: str, data: dict) -> None:
     for img_path in data.get("images", []):
         session.add(Image(listing=listing, path=img_path))
     session.commit()
+

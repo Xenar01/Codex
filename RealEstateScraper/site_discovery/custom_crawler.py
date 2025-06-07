@@ -1,3 +1,4 @@
+
 """Custom crawler to return predefined sites from configuration."""
 
 import os
@@ -13,4 +14,5 @@ def custom_discover(keywords: list) -> list:
 
     sites = config.get("sites", [])
     return [{"name": s.get("name", ""), "url": s.get("url", "")} for s in sites]
+
 

@@ -8,5 +8,7 @@ apscheduler
 sqlalchemy
 python-dotenv
 fuzzywuzzy
+
 cryptography
 win10toast
+

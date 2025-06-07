@@ -1,4 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
+
 from apscheduler.triggers.cron import CronTrigger
 
 _scheduler = BackgroundScheduler()
@@ -26,3 +27,4 @@ def start():
 def stop():
     if _scheduler.running:
         _scheduler.shutdown()
+

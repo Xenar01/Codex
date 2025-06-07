@@ -1,3 +1,4 @@
+
 """Scraper for yabaiti.com using BeautifulSoup."""
 
 from datetime import datetime
@@ -52,3 +53,4 @@ def scrape(fields=None, save_path="images", credentials=None, proxy=None):
         listings.append(data)
 
     return listings
+

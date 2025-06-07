@@ -1,7 +1,10 @@
+
 import os
 import yaml
+
 import requests
 from bs4 import BeautifulSoup
+
 
 
 def _load_config():
@@ -33,4 +36,5 @@ def scrape_google(keywords: list) -> list:
                 title = link.get_text(strip=True)
                 results.append({"name": title, "url": link["href"]})
     return results
+
 
