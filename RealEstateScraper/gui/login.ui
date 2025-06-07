@@ -1,0 +1,28 @@
+<!-- Qt Designer XML: حوار تسجيل الدخول -->
+<ui version="4.0">
+  <class>LoginDialog</class>
+  <widget class="QDialog" name="LoginDialog">
+    <property name="windowTitle">
+      <string>تسجيل الدخول</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+        <widget class="QLineEdit" name="editUsername">
+          <property name="placeholderText"><string>اسم المستخدم</string></property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLineEdit" name="editPassword">
+          <property name="echoMode">2</property>
+          <property name="placeholderText"><string>كلمة المرور</string></property>
+        </widget>
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+          <item><widget class="QPushButton" name="btnSave"><property name="text"><string>حفظ</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnCancel"><property name="text"><string>إلغاء</string></property></widget></item>
+        </layout>
+      </item>
+    </layout>
+  </widget>
+</ui>
