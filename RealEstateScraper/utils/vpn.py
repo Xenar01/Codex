@@ -1,6 +1,5 @@
 """Utilities for configuring and running VPN via OpenVPN CLI"""
 
-
 import subprocess
 from typing import Optional
 
@@ -22,4 +21,3 @@ def disconnect():
         _process.terminate()
         _process.wait()
         _process = None
-

@@ -1,13 +1,10 @@
-
 """Utilities for fuzzy matching and deduplication."""
-
 
 from fuzzywuzzy import fuzz
 
 
 def is_duplicate(a: str, b: str, threshold: int = 80) -> bool:
     return fuzz.ratio(a, b) >= threshold
-
 
 
 def dedup_listings(session, new_listings: list, threshold: int = 85) -> list:
@@ -27,4 +24,3 @@ def dedup_listings(session, new_listings: list, threshold: int = 85) -> list:
         if not dup:
             unique.append(listing)
     return unique
-

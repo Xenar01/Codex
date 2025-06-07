@@ -1,4 +1,3 @@
-
 """Scraper for opensooq.sy using requests and BeautifulSoup."""
 
 from datetime import datetime
@@ -53,4 +52,3 @@ def scrape(fields=None, save_path="images", credentials=None, proxy=None):
         listings.append(data)
 
     return listings
-

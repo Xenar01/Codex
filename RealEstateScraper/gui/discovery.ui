@@ -46,7 +46,6 @@
         </item>
         <item>
           <widget class="QTableWidget" name="tableResults">
-
             <column><property name="text"><string>#</string></property></column>
             <column><property name="text"><string>اسم الموقع</string></property></column>
             <column><property name="text"><string>الرابط</string></property></column>
@@ -70,7 +69,6 @@
         <item>
           <widget class="QPushButton" name="btnScheduler">
             <property name="text"><string>المجدول</string></property>
-
           </widget>
         </item>
       </layout>

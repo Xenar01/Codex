@@ -12,7 +12,6 @@
         </item>
         <item>
           <widget class="QLineEdit" name="editCron">
-
             <property name="placeholderText"><string>تعبير كرون</string></property>
           </widget>
         </item>
@@ -21,7 +20,6 @@
             <item><widget class="QPushButton" name="btnAdd"><property name="text"><string>إضافة</string></property></widget></item>
             <item><widget class="QPushButton" name="btnEdit"><property name="text"><string>تعديل</string></property></widget></item>
             <item><widget class="QPushButton" name="btnRemove"><property name="text"><string>حذف</string></property></widget></item>
-
             <item><widget class="QPushButton" name="btnStart"><property name="text"><string>تشغيل</string></property></widget></item>
             <item><widget class="QPushButton" name="btnStop"><property name="text"><string>إيقاف</string></property></widget></item>
           </layout>

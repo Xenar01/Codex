@@ -1,7 +1,7 @@
 import sys
+import os
 import yaml
 from PyQt5 import QtWidgets, uic
-
 from PyQt5.QtCore import Qt
 
 from site_discovery.core import discover_sites
@@ -9,15 +9,16 @@ from utils import db, export, dedup, auth
 from scheduler import scheduler
 
 
-def load_config(path="config.yaml"):
+def load_config(path: str | None = None):
+    """Load configuration from YAML file."""
+    if path is None:
+        path = os.path.join(os.path.dirname(__file__), "config.yaml")
     with open(path, "r", encoding="utf-8") as f:
-
         return yaml.safe_load(f)
 
 
 def main():
     config = load_config()
-
     db.init_db()
     app = QtWidgets.QApplication(sys.argv)
     window = uic.loadUi("gui/discovery.ui")
@@ -155,7 +156,6 @@ def main():
 
 
     window.btnOpenScraper.clicked.connect(scrape_all)
-
     window.show()
     sys.exit(app.exec_())
 

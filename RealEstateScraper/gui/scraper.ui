@@ -8,7 +8,6 @@
     <widget class="QWidget" name="centralwidget">
       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-
           <widget class="QGroupBox" name="groupFields">
             <property name="title"><string>اختر الحقول</string></property>
             <layout class="QHBoxLayout" name="horizontalLayoutFields">
@@ -19,7 +18,6 @@
               <item><widget class="QCheckBox" name="checkImages"><property name="text"><string>الصور</string></property></widget></item>
               <item><widget class="QCheckBox" name="checkPhone"><property name="text"><string>الهاتف</string></property></widget></item>
             </layout>
-
           </widget>
         </item>
         <item>

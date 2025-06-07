@@ -1,4 +1,3 @@
-
 """Scraper for ikar.sy using BeautifulSoup."""
 
 import os
