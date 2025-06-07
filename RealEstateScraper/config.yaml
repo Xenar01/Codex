@@ -1,0 +1,28 @@
+# إعدادات عامة
+keywords:
+  arabic:
+    - "عقارات سوريا"
+    - "شقق للبيع في سوريا"
+    # … rest of arabic keywords …
+  english:
+    - "Syria real estate"
+    # … rest of english keywords …
+bing_api_key: ""   # مفتاح مصدّر من Azure
+export:
+  formats:
+    - csv
+    - json
+    - mysql
+    - postgresql
+storage:
+  base_path: ""    # يختارها المستخدم في الواجهة
+  images: "images"
+scheduling:
+  default_cron: "0 0 * * *"  # يوميًا عند منتصف الليل
+ui:
+  language: "ar"
+notifications:
+  toast: true
+authentication:
+  use_master_password: true
+  # سيُطلب master password لحفظ بيانات الاعتماد مشفرة
