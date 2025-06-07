@@ -46,15 +46,31 @@
         </item>
         <item>
           <widget class="QTableWidget" name="tableResults">
-            <column>
-              <property name="text"><string>#</string></property>
-            </column>
-            <column>
-              <property name="text"><string>اسم الموقع</string></property>
-            </column>
-            <column>
-              <property name="text"><string>الرابط</string></property>
-            </column>
+
+            <column><property name="text"><string>#</string></property></column>
+            <column><property name="text"><string>اسم الموقع</string></property></column>
+            <column><property name="text"><string>الرابط</string></property></column>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnRefreshSites">
+            <property name="text"><string>تحديث المواقع</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnOpenScraper">
+            <property name="text"><string>بدء التجريف</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnManageCreds">
+            <property name="text"><string>إدارة بيانات الدخول</string></property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btnScheduler">
+            <property name="text"><string>المجدول</string></property>
+
           </widget>
         </item>
       </layout>

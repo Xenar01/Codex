@@ -26,3 +26,17 @@ notifications:
 authentication:
   use_master_password: true
   # سيُطلب master password لحفظ بيانات الاعتماد مشفرة
+
+network:
+  proxy: ""
+  vpn_config: ""
+database:
+  url: "sqlite:///realestate.db"
+sites:
+  - name: "ikar"
+    url: "https://ikar.sy"
+  - name: "opensooq"
+    url: "https://sy.opensooq.com"
+  - name: "yabaiti"
+    url: "https://yabaiti.com"
+

@@ -8,8 +8,18 @@
     <widget class="QWidget" name="centralwidget">
       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-          <widget class="QTextEdit" name="editFields">
-            <property name="placeholderText"><string>اختر الحقول المطلوبة</string></property>
+
+          <widget class="QGroupBox" name="groupFields">
+            <property name="title"><string>اختر الحقول</string></property>
+            <layout class="QHBoxLayout" name="horizontalLayoutFields">
+              <item><widget class="QCheckBox" name="checkTitle"><property name="text"><string>العنوان</string></property></widget></item>
+              <item><widget class="QCheckBox" name="checkPrice"><property name="text"><string>السعر</string></property></widget></item>
+              <item><widget class="QCheckBox" name="checkDescription"><property name="text"><string>الوصف</string></property></widget></item>
+              <item><widget class="QCheckBox" name="checkLocation"><property name="text"><string>الموقع</string></property></widget></item>
+              <item><widget class="QCheckBox" name="checkImages"><property name="text"><string>الصور</string></property></widget></item>
+              <item><widget class="QCheckBox" name="checkPhone"><property name="text"><string>الهاتف</string></property></widget></item>
+            </layout>
+
           </widget>
         </item>
         <item>
