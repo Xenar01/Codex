@@ -9,8 +9,12 @@
       </item>
       <item>
         <widget class="QLineEdit" name="editPassword">
-          <property name="echoMode">2</property>
-          <property name="placeholderText"><string>كلمة المرور</string></property>
+          <property name="echoMode">
+            <enum>QLineEdit.Password</enum>
+          </property>
+          <property name="placeholderText">
+            <string>كلمة المرور</string>
+          </property>
         </widget>
       </item>
       <item>
