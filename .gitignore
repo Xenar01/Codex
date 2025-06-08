@@ -76,3 +76,6 @@ Thumbs.db
 RealEstateScraper/data/
 RealEstateScraper/images/
 
+realestate.db
+.gitignore
+.gitignore
