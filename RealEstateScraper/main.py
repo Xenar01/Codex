@@ -2,7 +2,6 @@ import sys
 import os
 import yaml
 from PyQt5 import QtWidgets, uic
-
 from site_discovery.core import discover_sites
 from utils import db, export, dedup, auth
 from scheduler import scheduler
@@ -34,6 +33,7 @@ def main():
     pageLogin = uic.loadUi(os.path.join(ui_dir, "page_login.ui"))
     pageScraper = uic.loadUi(os.path.join(ui_dir, "page_scraper.ui"))
     pageScheduler = uic.loadUi(os.path.join(ui_dir, "page_scheduler.ui"))
+
     stack.addWidget(pageDiscovery)
     stack.addWidget(pageLogin)
     stack.addWidget(pageScraper)
