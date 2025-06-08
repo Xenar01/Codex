@@ -1,0 +1,24 @@
+<ui version="4.0">
+  <class>PageLogin</class>
+  <widget class="QWidget" name="PageLogin">
+    <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+        <widget class="QLineEdit" name="editUsername">
+          <property name="placeholderText"><string>اسم المستخدم</string></property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLineEdit" name="editPassword">
+          <property name="echoMode">2</property>
+          <property name="placeholderText"><string>كلمة المرور</string></property>
+        </widget>
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+          <item><widget class="QPushButton" name="btnSave"><property name="text"><string>حفظ</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnCancel"><property name="text"><string>إلغاء</string></property></widget></item>
+        </layout>
+      </item>
+    </layout>
+  </widget>
+</ui>

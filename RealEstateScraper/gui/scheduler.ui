@@ -1,0 +1,30 @@
+<!-- Qt Designer XML: إدارة المهام المجدولة -->
+<ui version="4.0">
+  <class>SchedulerWindow</class>
+  <widget class="QMainWindow" name="SchedulerWindow">
+    <property name="windowTitle">
+      <string>المجدول</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+          <widget class="QTableWidget" name="tableJobs"/>
+        </item>
+        <item>
+          <widget class="QLineEdit" name="editCron">
+            <property name="placeholderText"><string>تعبير كرون</string></property>
+          </widget>
+        </item>
+        <item>
+          <layout class="QHBoxLayout" name="layoutButtons">
+            <item><widget class="QPushButton" name="btnAdd"><property name="text"><string>إضافة</string></property></widget></item>
+            <item><widget class="QPushButton" name="btnEdit"><property name="text"><string>تعديل</string></property></widget></item>
+            <item><widget class="QPushButton" name="btnRemove"><property name="text"><string>حذف</string></property></widget></item>
+            <item><widget class="QPushButton" name="btnStart"><property name="text"><string>تشغيل</string></property></widget></item>
+            <item><widget class="QPushButton" name="btnStop"><property name="text"><string>إيقاف</string></property></widget></item>
+          </layout>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+</ui>
