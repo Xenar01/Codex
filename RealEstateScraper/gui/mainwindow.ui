@@ -1,0 +1,27 @@
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="windowTitle"><string>RealEstateScraper</string></property>
+    <property name="styleSheet"><string>* { font-size: 14pt; }</string></property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+          <widget class="QListWidget" name="listNavigation">
+            <item><property name="text"><string>اكتشاف المواقع</string></property></item>
+            <item><property name="text"><string>بيانات الدخول</string></property></item>
+            <item><property name="text"><string>التجريف</string></property></item>
+            <item><property name="text"><string>المجدول</string></property></item>
+          </widget>
+        </item>
+        <item>
+          <widget class="QStackedWidget" name="stackedWidget">
+            <widget class="QWidget" name="pagePlaceholder"/>
+            <widget class="QWidget" name="pagePlaceholder_2"/>
+            <widget class="QWidget" name="pagePlaceholder_3"/>
+            <widget class="QWidget" name="pagePlaceholder_4"/>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+</ui>

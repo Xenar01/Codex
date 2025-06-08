@@ -26,7 +26,6 @@ notifications:
 authentication:
   use_master_password: true
   # سيُطلب master password لحفظ بيانات الاعتماد مشفرة
-
 network:
   proxy: ""
   vpn_config: ""
