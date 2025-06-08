@@ -11,3 +11,4 @@ fuzzywuzzy
 cryptography
 win10toast
 python-Levenshtein
+

@@ -23,14 +23,17 @@ def main():
     font.setPointSize(14)
     app.setFont(font)
 
-    window = uic.loadUi("gui/mainwindow.ui")
+    ui_dir = os.path.join(os.path.dirname(__file__), "gui")
+
+    window = uic.loadUi(os.path.join(ui_dir, "mainwindow.ui"))
     stack = window.findChild(QtWidgets.QStackedWidget, "stackedWidget")
     nav = window.findChild(QtWidgets.QListWidget, "listNavigation")
 
-    pageDiscovery = uic.loadUi("gui/page_discovery.ui")
-    pageLogin = uic.loadUi("gui/page_login.ui")
-    pageScraper = uic.loadUi("gui/page_scraper.ui")
-    pageScheduler = uic.loadUi("gui/page_scheduler.ui")
+    pageDiscovery = uic.loadUi(os.path.join(ui_dir, "page_discovery.ui"))
+    pageLogin = uic.loadUi(os.path.join(ui_dir, "page_login.ui"))
+    pageScraper = uic.loadUi(os.path.join(ui_dir, "page_scraper.ui"))
+    pageScheduler = uic.loadUi(os.path.join(ui_dir, "page_scheduler.ui"))
+
     stack.addWidget(pageDiscovery)
     stack.addWidget(pageLogin)
     stack.addWidget(pageScraper)
@@ -100,7 +103,6 @@ def main():
 
         def add_job():
             cron = pageScheduler.editCron.text() or config["scheduling"]["default_cron"]
-
             scheduler.add_job(scrape_all, cron, job_id=f"job_{len(scheduler.list_jobs())+1}")
             refresh_jobs()
 
