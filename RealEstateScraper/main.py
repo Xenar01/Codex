@@ -2,7 +2,6 @@ import sys
 import os
 import yaml
 from PyQt5 import QtWidgets, uic
-
 from site_discovery.core import discover_sites
 from utils import db, export, dedup, auth
 from scheduler import scheduler
@@ -101,6 +100,7 @@ def main():
 
         def add_job():
             cron = pageScheduler.editCron.text() or config["scheduling"]["default_cron"]
+
             scheduler.add_job(scrape_all, cron, job_id=f"job_{len(scheduler.list_jobs())+1}")
             refresh_jobs()
 
